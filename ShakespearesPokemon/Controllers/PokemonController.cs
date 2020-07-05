@@ -26,19 +26,10 @@ namespace ShakespearesPokemon.Controllers
             _logger = logger;
         }
 
-        //GET: /Pokemon
-        [HttpGet]
-        public ActionResult<Pokemon> Get()
-        {
-            
-            return new Pokemon
-            {
-                Name = "Charizard",
-                Description = "I am Charizard"
-            };
-        }
-
-        //GET: /Pokemon/charizard
+        /// <summary>
+        ///  Get Shakesperean description given pokemon character name
+        /// </summary>
+        /// //GET: /pokemon/charizard
         [HttpGet("{name}")]
         public ActionResult<Pokemon> Get(string name)
         {

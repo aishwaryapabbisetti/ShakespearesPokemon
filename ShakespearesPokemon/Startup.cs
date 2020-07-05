@@ -12,6 +12,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using ShakespearesPokemon.Models;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using System.IO;
 
 namespace ShakespearesPokemon
 {
@@ -28,6 +31,28 @@ namespace ShakespearesPokemon
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            //Register the swagger generator 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo()
+                {
+                    Version = "v1",
+                    Title = "Shakespeares Pokemon API",
+                    Description = "ASP.NET Core Web API to get Pokemon Description in Shakespereas style",
+                    TermsOfService = new Uri("http://www.example.com"),
+                    Contact = new OpenApiContact()
+                    {
+                        Name = "Aishwarya Pabbisetti",
+                        Email = "apabbisetti@gmail.com.com",
+                        Url = new Uri("http://www.example.com")
+                    }
+
+                });
+                //set the comments path for the swagger JSON and UI
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +68,14 @@ namespace ShakespearesPokemon
             app.UseRouting();
 
             app.UseAuthorization();
+
+            //Enable middleware to serve generated Swagger as a JSON endpoint
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json",
+                "Shakespear's Pokemon API v1");
+            });
 
             app.UseEndpoints(endpoints =>
             {

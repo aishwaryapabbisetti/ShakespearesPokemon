@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShakespearesPokemon</name>
+    </assembly>
+    <members>
+        <member name="M:ShakespearesPokemon.Controllers.PokemonController.Get(System.String)">
+            <summary>
+             Get Shakesperean description given pokemon character name
+            </summary>
+            //GET: /pokemon/charizard
+        </member>
+    </members>
+</doc>
