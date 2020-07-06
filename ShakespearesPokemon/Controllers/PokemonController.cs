@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using ShakespearesPokemon.Models;
 
 namespace ShakespearesPokemon.Controllers
@@ -27,11 +21,11 @@ namespace ShakespearesPokemon.Controllers
         }
 
         /// <summary>
-        ///  Get Shakesperean description given pokemon character name
+        ///  Get Shakespeare's description for given pokemon's character name
         /// </summary>
         /// //GET: /pokemon/charizard
         [HttpGet("{name}")]
-        public ActionResult<Pokemon> Get(string name)
+        public ActionResult<Pokemon> GetPokemon(string name)
         {
             string shakesPokemonDesc;
             try
@@ -59,11 +53,11 @@ namespace ShakespearesPokemon.Controllers
                 return BadRequest(e.Message);
             };
            
-            return new Pokemon
+            return Ok(new Pokemon
             {
                 Name = name,
                 Description =  shakesPokemonDesc 
-            };
+            });
         }
     }
 }

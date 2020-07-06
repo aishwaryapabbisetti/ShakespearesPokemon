@@ -4,9 +4,9 @@
         <name>ShakespearesPokemon</name>
     </assembly>
     <members>
-        <member name="M:ShakespearesPokemon.Controllers.PokemonController.Get(System.String)">
+        <member name="M:ShakespearesPokemon.Controllers.PokemonController.GetPokemon(System.String)">
             <summary>
-             Get Shakesperean description given pokemon character name
+             Get Shakespeare's description for given pokemon's character name
             </summary>
             //GET: /pokemon/charizard
         </member>
