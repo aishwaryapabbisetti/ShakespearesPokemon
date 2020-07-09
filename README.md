@@ -4,7 +4,7 @@ This is a repository to retrieve the Shakespear's description for various Pokemo
 ### Project Structure:
 
 * `ShakespearesPokemon.sln`  Visual Studio 2019 solution containing all the related projects,
-* `ShakespearesPokemon` C# .NET Core Web API for the RESTful service that helps to familiarize with various Pokemon chracters in Shakespeare's language.
+* `ShakespearesPokemon` C# .NET Core Web API for the RESTful service that helps to familiarize with various Pokemon characters in Shakespeare's language.
 * `ShakespearesPokemon.Tests` C# .NET Core xUnit Tests, contains all tests that test the functionality of ShakespearesPokemon Web API.
 	
 ### Installation & Requirements:
@@ -27,10 +27,8 @@ This is a repository to retrieve the Shakespear's description for various Pokemo
 	
 ### API Overview & Usage:
 
-* Once the server is up and running, you can try the API with following end point in your web browser: 
-* ```http://localhost:5000/pokemon/<favorite-pokemon-character>```. 
+* Once the server is up and running, you can try the API with following end point in your web browser: `http://localhost:5000/pokemon/<favorite-pokemon-character>` 
 * This will return the Pokemon name with it's description in Shakespeare's language.
-
 * For example, `http://localhost:5000/pokemon/pikachu` endpoint will return something like below:
 	```
 	{
