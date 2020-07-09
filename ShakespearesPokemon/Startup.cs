@@ -38,12 +38,12 @@ namespace ShakespearesPokemon
                 {
                     Version = "v1",
                     Title = "Shakespeares Pokemon API",
-                    Description = "ASP.NET Core Web API to get Pokemon Description in Shakespereas style",
+                    Description = "ASP.NET Core Web API to get Pokemon Description in Shakespeare style",
                     TermsOfService = new Uri("http://www.example.com"),
                     Contact = new OpenApiContact()
                     {
                         Name = "Aishwarya Pabbisetti",
-                        Email = "apabbisetti@gmail.com.com",
+                        Email = "apabbisetti@gmail.com",
                         Url = new Uri("http://www.example.com")
                     }
 

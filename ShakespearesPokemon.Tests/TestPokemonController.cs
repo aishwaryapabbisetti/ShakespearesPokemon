@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Xunit;
 using ShakespearesPokemon.Models;
 using ShakespearesPokemon.Controllers;
+using System.Runtime.InteropServices;
 
 namespace ShakespearesPokemon.Tests
 {
@@ -42,25 +43,6 @@ namespace ShakespearesPokemon.Tests
             // Assert
             Assert.Equal(400, (response.Result as BadRequestObjectResult).StatusCode);
             Assert.Equal("The remote server returned an error: (404) Not Found.", (response.Result as BadRequestObjectResult).Value);
-        }
-
-        [Fact]
-        public void TestGetPokemon_ShouldReturnTooManyRequests()
-        {
-            // Arrange
-            var controller = new PokemonController(null);
-
-            // Act
-             controller.GetPokemon("ditto");
-             controller.GetPokemon("ditto");
-             controller.GetPokemon("ditto");
-             controller.GetPokemon("ditto");
-             controller.GetPokemon("ditto");
-            var response = controller.GetPokemon("ditto");
-
-            // Assert
-            Assert.Equal(400, (response.Result as BadRequestObjectResult).StatusCode);
-            Assert.Equal("The remote server returned an error: (429) Too Many Requests.", (response.Result as BadRequestObjectResult).Value);
         }
     }
 }
