@@ -1,5 +1,5 @@
 # ShakespearesPokemon
-This is a repository to retrieve the Shakespear's description for various Pokemon characters.
+This is a repository to retrieve the Shakespeare's description for various Pokemon characters.
 
 ### Project Structure:
 
