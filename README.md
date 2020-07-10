@@ -17,7 +17,7 @@ This is a repository to retrieve the Shakespeare's description for various Pokem
 ### Running the Project:
 
 1. To run the ShakespearesPokemon Web API, 
-	- Go to the Project folder `ShakespearesPokemon/ShakespearesPokemon` where `Startup.cs` is present. 
+	- In .NET Core CLI, Go to the Project folder `ShakespearesPokemon/ShakespearesPokemon` where `Startup.cs` is present. 
 	- Run: `dotnet run`. This will start the server at `http://localhost:5000`.
 	
 2. To run the xUnit tests created for WebAPI,
